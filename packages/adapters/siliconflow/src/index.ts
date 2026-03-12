@@ -262,7 +262,7 @@ export class SiliconFlowProvider implements ImageProvider {
     });
 
     if (!response.ok) {
-      const error = await response.json().catch(() => ({ message: 'Unknown error' }));
+      const error = await response.json().catch(() => ({ message: 'Unknown error' })) as { message?: string };
       throw {
         code: response.status,
         message: error.message || `HTTP ${response.status}`,

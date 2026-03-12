@@ -291,7 +291,7 @@ export class IntentParser {
     }
 
     // Check for partial matches
-    if (/white.*background|白底|白背景/.test(lowerInput)) {
+    if (/white.*background|白(色)?背景|白底/.test(lowerInput)) {
       return 'minimal-white-background';
     }
     if (/studio.*light|摄影棚|棚拍/.test(lowerInput)) {

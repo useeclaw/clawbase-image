@@ -153,6 +153,14 @@ export interface RoutingStrategy {
   qualityThreshold?: number;
 }
 
+export interface RetryPolicy {
+  maxRetries: number;
+  backoffStrategy: 'fixed' | 'exponential' | 'linear';
+  initialDelay: number;
+  maxDelay: number;
+  retryableErrors: string[];
+}
+
 // Cache Types
 
 export interface CacheConfig {
